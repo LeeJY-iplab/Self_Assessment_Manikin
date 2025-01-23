@@ -30,9 +30,9 @@ class UserDAO:
                 return False
 
 
-    def signup(self, userid, password, email, name, age, phone):
+    def signup(self, userid, password, email, name, age, phone, gender):
         self.connect()
-        vals = (userid, password, email, name, age, phone, 0)
+        vals = (userid, password, email, name, age, phone, 0, gender)
         self.cursor.execute(sql.signup_sql(), vals)
         self.conn.commit()
         self.conn.close()
@@ -107,7 +107,7 @@ class UserDAO:
 
     def save_movie_assessment(self, assessment_id, userid, movie_name, valance, arousal, dominance, liking, familiarity, emotion):
         self.connect()
-        vals = (assessment_id, userid, movie_name, valance, arousal, dominance, liking, familiarity, emotion)
+        vals = (assessment_id, userid, movie_name, valance, arousal, dominance, liking, familiarity, emotion, 0)
         self.cursor.execute(sql.save_movie_assessment_sql(), vals)
         self.conn.commit()
         self.conn.close()

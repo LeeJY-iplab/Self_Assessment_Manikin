@@ -28,7 +28,7 @@
             <script>
                 alert("{{ message }}")
             </script>
-        {% elif category == 'success' %}
+        {% else %}
             <script>
                 alert("{{ message }}")
             </script>
@@ -74,13 +74,28 @@
                                         placeholder="이메일을 입력하세요.">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user"
-                                           name="Phone" placeholder="010-XXXX-XXXX">
+                                    <div class="d-inline-flex">
+                                        <input type="text" class="form-control form-control-user"
+                                            name="Phone1" placeholder="">-
+                                        <input type="text" class="form-control form-control-user"
+                                            name="Phone2" placeholder="">-
+                                        <input type="text" class="form-control form-control-user"
+                                            name="Phone3" placeholder="">
+                                    </div>
+
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control form-control-user"
-                                           name="Age" placeholder="나이를 입력하세요.">
+                                        <select name="Gender" class="form-control form-control-user text-align-right">
+                                            <option value="">성별선택</option>
+                                            <option value="male">남</option>
+                                            <option value="female">여</option>
+                                        </select>
                                 </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control form-control-user"
+                                           name="Age" placeholder="생년월일을 입력하세요.">
+                                </div>
+
 
                                 <input type="submit" value="Register Account" class="btn btn-primary btn-user btn-block">
                             </form>
